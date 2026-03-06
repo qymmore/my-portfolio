@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>~/portfolio</title>
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #0a0a0a;
+      --fg: #f0f0f0;
+      --fg-dim: #888;
+      --fg-dimmer: #444;
+      --cursor-color: #f0f0f0;
+    }
+    :root[data-theme="light"] {
+      --bg: #f5f5f0;
+      --fg: #0a0a0a;
+      --fg-dim: #555;
+      --fg-dimmer: #bbb;
+      --cursor-color: #0a0a0a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    body {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* ── Theme toggle ── */
+    #theme-toggle {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--fg-dim);
+      font-size: 18px;
+      padding: 4px;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+    #theme-toggle:hover {
+      color: var(--fg);
+    }
+
+    /* ── Header / intro ── */
+    .prompt-line {
+      color: var(--fg-dim);
+      margin-bottom: 2px;
+    }
+    .prompt-line span.path {
+      color: var(--fg);
+    }
+
+    #typewriter-output {
+      min-height: 1.7em;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 1.1em;
+      background: var(--cursor-color);
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* ── Dividers ── */
+    .divider {
+      color: var(--fg-dimmer);
+      margin: 36px 0 24px;
+      letter-spacing: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      color: var(--fg-dim);
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    /* ── About block ── */
+    .about-block {
+      margin-top: 28px;
+    }
+    .about-block p {
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+    .tag-line {
+      color: var(--fg-dim);
+      font-size: 13px;
+    }
+
+    /* ── Lists ── */
+    .entry-list {
+      list-style: none;
+    }
+    .entry-list li {
+      margin-bottom: 18px;
+    }
+    .entry-list li .entry-title {
+      color: var(--fg);
+    }
+    .entry-list li .entry-title a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .entry-list li .entry-title a:hover {
+      color: var(--fg-dim);
+    }
+    .entry-meta {
+      color: var(--fg-dim);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .entry-desc {
+      color: var(--fg-dim);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 60px;
+      color: var(--fg-dimmer);
+      font-size: 13px;
+    }
+    footer a {
+      color: var(--fg-dim);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    footer a:hover {
+      color: var(--fg);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="theme-toggle" aria-label="Toggle light/dark mode">💡</button>
+
+  <!-- Intro -->
+  <div class="prompt-line">
+    <span class="path">~/portfolio</span> $
+  </div>
+  <div id="typewriter-output"><span class="cursor"></span></div>
+
+  <!-- About -->
+  <div class="about-block">
+    <div class="divider">/* about */──────────────────────────────────────────</div>
+    <div class="section-label">// whoami</div>
+    <p>
+      Software engineer with a strong interest in cybersecurity research.
+      I build things, break things, and occasionally write about both.
+    </p>
+    <p class="tag-line">[ systems · security · backend ]</p>
+  </div>
+
+  <!-- Projects -->
+  <div>
+    <div class="divider">/* projects */────────────────────────────────────────</div>
+    <div class="section-label">// ls ./projects</div>
+    <ul class="entry-list">
+    <li>
+        <div class="entry-title"><a href="https://github.com/qymmore/mini-cloud-platform" target="_blank">mini data cloud platform</a></div>
+        <div class="entry-meta">FastAPI · PostgreSQL · Redis · Docker </div>
+        <div class="entry-desc">A Snowflake-inspired cloud data platform that simulates the core functions of a modern data warehouse, enabling high-performance querying, transformation, and analytics on structured datasets.  </div>
+      </li>
+      <li>
+        <div class="entry-title"><a href="https://github.com/qymmore/lazyfoot" target="_blank">lazyfoot </a></div>
+        <div class="entry-meta">Python · Network · Cybersecurity </div>
+        <div class="entry-desc">
+           A modular CLI reconnaissance and footprinting tool for penetration testing, featuring automated service enumeration across 11 protocols and an integrated web vulnerability scanner.
+        </div>
+      </li>
+      <li>
+        <div class="entry-title"><a href="https://github.com/qymmore/c-quence-game" target="_blank">c-quence</a></div>
+        <div class="entry-meta">C · Raylib · Pixel art</div>
+        <div class="entry-desc">Minimalist single-lane rhythm game built in C using the Raylib graphics library, featuring pixel art GUI with custom-designed visual assets. </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Experience -->
+  <div>
+    <div class="divider">/* experience */──────────────────────────────────────</div>
+    <div class="section-label">// cat ./experience</div>
+    <ul class="entry-list">
+        <li>
+        <div class="entry-title">Freelance</div>
+        <div class="entry-meta">Lead Full Stack Engineer · Jun 2025 - Present </div>
+        <div class="entry-desc">Designing and developing fully functional websites for local small businesses in Kitchener, delivering custom full stack solutions to help them establish and grow their online presence. </div>
+      </li>
+        <li>
+            <div class="entry-title">ReserTrac Inc.</div>
+            <div class="entry-meta">Junior ML Engineer  · Sep 2025 - Mar 2026 </div>
+            <div class="entry-desc">Built data pipelines and predictive models for airport and ground transportation clients, including Toronto Pearson Airport, processing fleet telemetry and TNC data across 15,000+ Ministry of Transportation vehicles.</div>
+        </li>
+      <li>
+        <div class="entry-title">Shopify</div>
+        <div class="entry-meta">Software Engineer Intern · Jan 2025 – Mar 2025 </div>
+        <div class="entry-desc">Worked on Core Build Automations team helping develop scalable, automation platform apps for merchants to customize their e-commerce sites. </div>
+      </li>
+      <li>
+        <div class="entry-title">University of Waterloo</div>
+        <div class="entry-meta">ML Intern · Jan 2024 - Apr 2025 </div>
+        <div class="entry-desc">Developed multi-domain foundation model for time series forecasting using PyTorch and Tensorflow. </div>
+      </li>
+      <li>
+        <div class="entry-title">Data Glacier</div>
+        <div class="entry-meta">Data Science/ML Intern · Jan 2024 - Apr 2025 </div>
+        <div class="entry-desc">Intern, involved in the development of ML classification models for transportation industry data and implementing data ingestion pipelines. </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <footer>
+    <div class="divider">──────────────────────────────────────────────────────</div>
+    <a href="https://github.com/qymmore" target="_blank">github</a>
+    &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/sqym21" target="_blank">linkedin</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:rquayyum@uwaterloo.ca">email</a>
+    &nbsp;·&nbsp;
+    <a href="https://medium.com/@qymmore" target="_blank">medium</a>
+    &nbsp;·&nbsp;
+  </footer>
+
+  <script>
+    // ── Theme toggle ──
+    const toggle = document.getElementById('theme-toggle');
+    const root   = document.documentElement;
+
+    const saved = localStorage.getItem('theme') || 'dark';
+    root.setAttribute('data-theme', saved);
+
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Typewriter effect
+    const output   = document.getElementById('typewriter-output');
+    const text     = 'Hi, I\'m Sarah Quayyum — software engineer & security researcher. 👋🏼';
+    let   i        = 0;
+    let   cursorEl = output.querySelector('.cursor');
+
+    function type() {
+      if (i < text.length) {
+        // Remove cursor, add next char, re-append cursor
+        if (cursorEl) cursorEl.remove();
+        output.insertAdjacentText('beforeend', text[i]);
+        cursorEl = document.createElement('span');
+        cursorEl.className = 'cursor';
+        output.appendChild(cursorEl);
+        i++;
+        setTimeout(type, 38 + Math.random() * 30);
+      }
+      // cursor stays blinking after done
+    }
+
+    // small delay before starting
+    setTimeout(type, 400);
+  </script>
+
+</body>
+</html>
