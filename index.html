@@ -13,7 +13,7 @@
       --cursor-color: #f0f0f0;
     }
     :root[data-theme="light"] {
-      --bg: #f5f5f0;
+      --bg: #fff8e7;
       --fg: #0a0a0a;
       --fg-dim: #555;
       --fg-dimmer: #bbb;
@@ -187,17 +187,18 @@
     <div class="section-label">// ls ./projects</div>
     <ul class="entry-list">
     <li>
-        <div class="entry-title"><a href="https://github.com/qymmore/mini-cloud-platform" target="_blank">mini data cloud platform</a></div>
-        <div class="entry-meta">FastAPI · PostgreSQL · Redis · Docker </div>
-        <div class="entry-desc">A Snowflake-inspired cloud data platform that simulates the core functions of a modern data warehouse, enabling high-performance querying, transformation, and analytics on structured datasets.  </div>
-      </li>
-      <li>
         <div class="entry-title"><a href="https://github.com/qymmore/lazyfoot" target="_blank">lazyfoot </a></div>
         <div class="entry-meta">Python · Network · Cybersecurity </div>
         <div class="entry-desc">
            A modular Python CLI tool for network reconnaissance and penetration test preparation, with automated enumeration across 11 protocols, per-service deep scanning, and an integrated web vulnerability scanner.
         </div>
+    </li>
+    <li>
+        <div class="entry-title"><a href="https://github.com/qymmore/mini-cloud-platform" target="_blank">mini data cloud platform</a></div>
+        <div class="entry-meta">FastAPI · PostgreSQL · Redis · Docker </div>
+        <div class="entry-desc">A Snowflake-inspired cloud data platform that simulates the core functions of a modern data warehouse, enabling high-performance querying, transformation, and analytics on structured datasets.  </div>
       </li>
+  
       <li>
         <div class="entry-title"><a href="https://github.com/qymmore/quiver" target="_blank">quiver</a></div>
         <div class="entry-meta">Kotlin · Jetpack Compose </div>
@@ -294,7 +295,7 @@
 
     // Typewriter effect
     const output   = document.getElementById('typewriter-output');
-    const text     = 'Hi, I\'m Sarah Quayyum — software engineer & security researcher. 👋🏼';
+    const text     = 'Hi, I\'m Sarah Quayyum — software engineer & security researcher.';
     let   i        = 0;
     let   cursorEl = output.querySelector('.cursor');
 
